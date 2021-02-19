@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{env('APP_NAME');}} | @yield('title')</title>
+  <title>{{env('APP_NAME')}} | @yield('title')</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -27,20 +27,20 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="@if ($layout == 'before-login') hold-transition login-page @if ($layout == 'after-login') hold-transition sidebar-mini layout-fixed @endif">
-<div class="wrapper">
-  @if ($layout == 'after-login')
-    @include('../_navbar')
-    @include('../_sidebar')
+<body class="@if ($layout == 'before-signin') hold-transition login-page @elseif ($layout == 'after-signin') hold-transition sidebar-mini layout-fixed @endif">
+  @if ($layout == 'after-signin')
+    <div class="wrapper">
+    @include('../sub-views/_navbar')
+    @include('../sub-views/_sidebar')
   @endif
 
   @yield('content', 'empty content')
 
-  @if ($layout == 'after-login')
-    @include('../_footer')
-    @include('../_control_sidebar')
+  @if ($layout == 'after-signin')
+    @include('../sub-views/_footer')
+    @include('../sub-views/_control_sidebar')
+    </div>
   @endif
-</div>
 <!-- ./wrapper -->
 
 <!-- jQuery -->
