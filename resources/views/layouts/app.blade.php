@@ -27,8 +27,8 @@
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
-<body class="@if ($layout == 'before-signin') hold-transition login-page @elseif ($layout == 'after-signin') hold-transition sidebar-mini layout-fixed @endif">
-  @if ($layout == 'after-signin')
+<body class="hold-transition @if ($layout == 'signin') login-page @elseif ($layout == 'signup') register-page @elseif ($layout == 'valid-auth') sidebar-mini layout-fixed @endif">
+  @if ($layout == 'valid-auth')
     <div class="wrapper">
     @include('../sub-views/_navbar')
     @include('../sub-views/_sidebar')
@@ -36,7 +36,7 @@
 
   @yield('content', 'empty content')
 
-  @if ($layout == 'after-signin')
+  @if ($layout == 'valid-auth')
     @include('../sub-views/_footer')
     @include('../sub-views/_control_sidebar')
     </div>
