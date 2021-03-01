@@ -16,3 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', function () {
+    return view('home');
+})->middleware(['verified']);
+
+Route::get('/term', function () {
+    return 'terms page';
+});
