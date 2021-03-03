@@ -5,7 +5,7 @@
 @section('content')  
 <div class="register-box">
   <div class="register-logo">
-    <h1><b>{{__('Muslim')}}</b> {{__('Up')}}</h1>
+    <img src="{{ asset('icon.png') }}" alt="icon-brand" id="icon-brand">
   </div>
 
   <div class="card">

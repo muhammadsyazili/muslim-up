@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>{{env('APP_NAME')}} | @yield('title')</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('favicon.png') }}">
+  <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
+
+  <title>{{env('APP_NAME')}} | @yield('title')</title>
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ asset('template/plugins/fontawesome-free/css/all.min.css') }}">
@@ -38,9 +42,17 @@
       width: 50vw !important;
     }
 
+    .login-logo #icon-brand,.register-logo #icon-brand{
+      width: 200px;
+    }
+
     @media (max-width:576px){
       .login-box,.register-box{
         margin-top:.5rem !important;width:90% !important;
+      }
+
+      .login-logo #icon-brand,.register-logo #icon-brand{
+        width: 100px;
       }
     }
   </style>

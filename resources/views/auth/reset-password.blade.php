@@ -5,7 +5,7 @@
 @section('content')
 <div class="login-box">
   <div class="login-logo">
-    <h1><b>{{__('Muslim')}}</b> {{__('Up')}}</h1>
+    <img src="{{ asset('icon.png') }}" alt="icon-brand" id="icon-brand">
   </div>
   <!-- /.login-logo -->
   <div class="card">
