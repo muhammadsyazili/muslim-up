@@ -6,8 +6,8 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('favicon.png') }}">
-  <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
+  <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('favicon.ico') }}">
+  <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
 
   <title>{{env('APP_NAME')}} | @yield('title')</title>
 
@@ -48,7 +48,8 @@
 
     @media (max-width:576px){
       .login-box,.register-box{
-        margin-top:.5rem !important;width:90% !important;
+        margin-top:.5rem !important;
+        width:90% !important;
       }
 
       .login-logo #icon-brand,.register-logo #icon-brand{
@@ -56,6 +57,8 @@
       }
     }
   </style>
+
+  @stack('style')
 </head>
 <body class="hold-transition register-page login-page">
 
