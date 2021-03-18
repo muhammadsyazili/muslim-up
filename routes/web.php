@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return Auth::check() ? redirect('/home/dashboard') : view('welcome');
 });
 
 Route::get('/home', function () {
@@ -23,4 +24,8 @@ Route::get('/home', function () {
 
 Route::get('/term', function () {
     return 'terms page';
-});
+})->name('term');
+
+Route::get('/about', function () {
+    return 'about page';
+})->name('about');
