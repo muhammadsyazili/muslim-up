@@ -1,1 +1,1 @@
-![Gambar teks editor VS Code](https://github.com/muhammadsyazili/muslim-up/logo-brand.svg)
+![Gambar teks editor VS Code](https://github.com/muhammadsyazili/muslim-up/blob/master/logo-brand.svg)
