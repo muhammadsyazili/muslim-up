@@ -32,42 +32,36 @@
         </g>
     </svg>
   </div>
-  <!-- /.login-logo -->
-  <div class="card">
-    <div class="card-body login-card-body">
-      <p class="login-box-msg text-left">{{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}</p>
 
-      @if (session('status') == 'verification-link-sent')
-          <div class="alert alert-success" role="alert">
-              {{ __('A new verification link has been sent to the email address you provided during registration.') }}
-          </div>
-      @endif
+  <h3 class="login-box-msg font-weight-bold">{{__('Verify Email')}}</h3>
 
-      <form method="POST" action="{{ route('verification.send') }}">
-          @csrf
-          @method('POST')
+  <hr class="bg-white">
 
-          <div class="row">
-            <div class="col-12">
-              <button type="submit" class="btn btn-link">{{ __('Resend Verification Email') }}</button>
-            </div>
-            <!-- /.col -->
-          </div>
-      </form>
+  <p class="login-box-msg text-left">{{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}</p>
 
-      <form method="POST" action="{{ route('logout') }}">
-          @csrf
-          @method('POST')
+  @if (session('status') == 'verification-link-sent')
+      <div class="alert alert-success" role="alert">
+          {{ __('A new verification link has been sent to the email address you provided during registration.') }}
+      </div>
+  @endif
 
-          <div class="row">
-            <div class="col-12">
-              <button type="submit" class="btn btn-link">{{ __('Sign out') }}</button>
-            </div>
-            <!-- /.col -->
-          </div>
-      </form>
-    </div>
-    <!-- /.login-card-body -->
+  <form method="POST" action="{{ route('verification.send') }}">
+      @csrf
+      @method('POST')
+
+      <div class="row">
+        <div class="col-12">
+          <button type="submit" class="btn btn-link font-weight-bold">{{ __('Resend Verification Email') }}</button>
+        </div>
+        <!-- /.col -->
+      </div>
+  </form>
+
+  <div class="lockscreen-footer text-center text-white">
+      Copyright &copy; {{ now()->year }}
+      <b><a href="{{ env('APP_URL') }}">Muslim Up</a></b>
+      <br/>
+      All rights reserved
   </div>
 </div>
 @endsection

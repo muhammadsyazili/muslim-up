@@ -23,21 +23,6 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
   <style>
-    body{
-      background: rgb(2,0,36) !important;
-      background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%) !important;
-    }
-
-    .login-logo,.register-logo{
-      color: white;
-    }
-
-    .btn-primary{
-      background: rgb(2,0,36) !important;
-      background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%) !important;
-      border: none;
-    }
-
     .login-box,.register-box{
       width: 50vw !important;
     }
@@ -60,7 +45,7 @@
 
   @stack('style')
 </head>
-<body class="hold-transition register-page login-page">
+<body class="hold-transition register-page login-page bg-dark">
 
   @yield('content', 'empty content')
 

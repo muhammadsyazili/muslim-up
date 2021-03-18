@@ -32,70 +32,74 @@
             </g>
         </svg>
     </div>
-    <!-- /.login-logo -->
-    <div class="card">
-        <div class="card-body login-card-body">
-            <p class="login-box-msg">{{__('Sign In')}}</p>
 
-            <form action="{{ route('login') }}" method="post">
-                @csrf
-                @method('POST')
+    <h3 class="login-box-msg font-weight-bold">{{__('Sign In')}}</h3>
 
-                <div class="input-group mb-3">
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                        <span class="fas fa-at"></span>
-                        </div>
-                    </div>
-                    <input type="text" class="form-control @error('username') is-invalid @enderror" placeholder="Username" name="username" value="{{ old('username') }}"/>
+    <hr class="bg-white">
+
+    <form action="{{ route('login') }}" method="post">
+        @csrf
+        @method('POST')
+
+        <div class="input-group mb-3">
+            <div class="input-group-append">
+                <div class="input-group-text">
+                <span class="fas fa-at"></span>
                 </div>
-
-                @error('username')
-                    <div class="alert alert-danger mt-2">
-                        {{ $message }}
-                    </div>    
-                @enderror
-
-                <div class="input-group mb-3">
-                    <div class="input-group-append">
-                        <div class="input-group-text">
-                        <span class="fas fa-lock"></span>
-                        </div>
-                    </div>
-                    <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password"/>
-                </div>
-
-                @error('password')
-                    <div class="alert alert-danger mt-2">
-                        {{ $message }}
-                    </div>    
-                @enderror
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="icheck-primary">
-                            <input type="checkbox" id="remember" name="remember"/>
-                            <label for="remember">{{__('Remember Me')}}</label>
-                        </div>
-                    </div>
-                    <!-- /.col -->
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary btn-block">
-                            {{__('Sign In')}}
-                        </button>
-                    </div>
-                    <!-- /.col -->
-                </div>
-            </form>
-
-            <p class="mb-1">
-                <a href="{{ route('password.request') }}">{{__('I forgot my password')}}</a>
-            </p>
-            <p class="mb-0">
-                <a href="{{ route('register') }}" class="text-center">{{__('Sign up a new membership')}}</a>
-            </p>
+            </div>
+            <input type="text" class="form-control @error('username') is-invalid @enderror" placeholder="Username" name="username" value="{{ old('username') }}"/>
         </div>
-        <!-- /.login-card-body -->
+
+        @error('username')
+            <div class="alert alert-danger mt-2">
+                {{ $message }}
+            </div>    
+        @enderror
+
+        <div class="input-group mb-3">
+            <div class="input-group-append">
+                <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+                </div>
+            </div>
+            <input type="password" class="form-control @error('password') is-invalid @enderror" placeholder="Password" name="password"/>
+        </div>
+
+        @error('password')
+            <div class="alert alert-danger mt-2">
+                {{ $message }}
+            </div>    
+        @enderror
+
+        <div class="row">
+            <div class="col-12">
+                <div class="icheck-primary">
+                    <input type="checkbox" id="remember" name="remember"/>
+                    <label for="remember">{{__('Remember Me')}}</label>
+                </div>
+            </div>
+            <!-- /.col -->
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary btn-block font-weight-bold">
+                    {{__('Sign In')}}
+                </button>
+            </div>
+            <!-- /.col -->
+        </div>
+    </form>
+
+    <p class="mb-1">
+        <a href="{{ route('password.request') }}" class="font-weight-bold">{{__('I forgot my password')}}</a>
+    </p>
+    <p class="mb-0">
+        <a href="{{ route('register') }}" class="font-weight-bold">{{__('Sign up a new membership')}}</a>
+    </p>
+
+    <div class="lockscreen-footer text-center text-white">
+        Copyright &copy; {{ now()->year }}
+        <b><a href="{{ env('APP_URL') }}">Muslim Up</a></b>
+        <br/>
+        All rights reserved
     </div>
 </div>
 @endsection
